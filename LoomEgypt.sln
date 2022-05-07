@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoomEgypt.WebAPI", "LoomEgypt.WebAPI\LoomEgypt.WebAPI.csproj", "{073BC5FE-AA51-4307-BBF2-0FBD77305A2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoomEgypt.Domain", "LoomEgypt.Domain\LoomEgypt.Domain.csproj", "{A0467467-5F88-4926-916A-9F64F8D1CE9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoomEgypt.DataAccess", "LoomEgypt.DataAccess\LoomEgypt.DataAccess.csproj", "{1298A5DC-4524-40D6-8E1D-348967A9F8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoomEgypt.Services", "LoomEgypt.Services\LoomEgypt.Services.csproj", "{BCDA0C29-D6A4-4068-8D1F-8B7805675B25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{073BC5FE-AA51-4307-BBF2-0FBD77305A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073BC5FE-AA51-4307-BBF2-0FBD77305A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073BC5FE-AA51-4307-BBF2-0FBD77305A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073BC5FE-AA51-4307-BBF2-0FBD77305A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0467467-5F88-4926-916A-9F64F8D1CE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0467467-5F88-4926-916A-9F64F8D1CE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0467467-5F88-4926-916A-9F64F8D1CE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0467467-5F88-4926-916A-9F64F8D1CE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1298A5DC-4524-40D6-8E1D-348967A9F8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1298A5DC-4524-40D6-8E1D-348967A9F8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1298A5DC-4524-40D6-8E1D-348967A9F8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1298A5DC-4524-40D6-8E1D-348967A9F8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCDA0C29-D6A4-4068-8D1F-8B7805675B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCDA0C29-D6A4-4068-8D1F-8B7805675B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCDA0C29-D6A4-4068-8D1F-8B7805675B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCDA0C29-D6A4-4068-8D1F-8B7805675B25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94234054-1C69-4D54-A84C-057AA3023B74}
+	EndGlobalSection
+EndGlobal
