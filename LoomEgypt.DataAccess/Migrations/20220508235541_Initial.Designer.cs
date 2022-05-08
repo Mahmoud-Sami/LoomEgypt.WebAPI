@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoomEgypt.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220508044958_Initial")]
+    [Migration("20220508235541_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,6 +79,9 @@ namespace LoomEgypt.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryID");
@@ -92,7 +95,8 @@ namespace LoomEgypt.DataAccess.Migrations
                             Brand = "Nike",
                             CategoryID = 1,
                             Description = "Product Description-1",
-                            Name = "Product-1"
+                            Name = "Product-1",
+                            Price = 27.50m
                         },
                         new
                         {
@@ -100,7 +104,8 @@ namespace LoomEgypt.DataAccess.Migrations
                             Brand = "Canon",
                             CategoryID = 2,
                             Description = "Product Description-2",
-                            Name = "Product-2"
+                            Name = "Product-2",
+                            Price = 14.99m
                         });
                 });
 

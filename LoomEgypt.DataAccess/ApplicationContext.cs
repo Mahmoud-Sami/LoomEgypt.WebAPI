@@ -21,8 +21,8 @@ namespace LoomEgypt.DataAccess
             });
 
             modelBuilder.Entity<Product>().HasData(new Product[]{
-                new Product { Id = 1, Name = "Product-1", Brand = "Nike", Description = "Product Description-1",  CategoryID = 1 },
-                new Product { Id = 2, Name = "Product-2", Brand = "Canon", Description = "Product Description-2", CategoryID = 2 },
+                new Product { Id = 1, Name = "Product-1", Brand = "Nike", Description = "Product Description-1", Price = 27.50M,  CategoryID = 1 },
+                new Product { Id = 2, Name = "Product-2", Brand = "Canon", Description = "Product Description-2", Price = 14.99M, CategoryID = 2 },
             });
 
             modelBuilder.Entity<ProductImage>().HasData(new ProductImage[]{

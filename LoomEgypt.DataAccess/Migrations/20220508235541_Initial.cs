@@ -30,6 +30,7 @@ namespace LoomEgypt.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Brand = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -117,13 +118,13 @@ namespace LoomEgypt.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Brand", "CategoryID", "Description", "Name" },
-                values: new object[] { 1, "Nike", 1, "Product Description-1", "Product-1" });
+                columns: new[] { "Id", "Brand", "CategoryID", "Description", "Name", "Price" },
+                values: new object[] { 1, "Nike", 1, "Product Description-1", "Product-1", 27.50m });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Brand", "CategoryID", "Description", "Name" },
-                values: new object[] { 2, "Canon", 2, "Product Description-2", "Product-2" });
+                columns: new[] { "Id", "Brand", "CategoryID", "Description", "Name", "Price" },
+                values: new object[] { 2, "Canon", 2, "Product Description-2", "Product-2", 14.99m });
 
             migrationBuilder.InsertData(
                 table: "ProductAttributes",

@@ -77,6 +77,9 @@ namespace LoomEgypt.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryID");
@@ -90,7 +93,8 @@ namespace LoomEgypt.DataAccess.Migrations
                             Brand = "Nike",
                             CategoryID = 1,
                             Description = "Product Description-1",
-                            Name = "Product-1"
+                            Name = "Product-1",
+                            Price = 27.50m
                         },
                         new
                         {
@@ -98,7 +102,8 @@ namespace LoomEgypt.DataAccess.Migrations
                             Brand = "Canon",
                             CategoryID = 2,
                             Description = "Product Description-2",
-                            Name = "Product-2"
+                            Name = "Product-2",
+                            Price = 14.99m
                         });
                 });
 
