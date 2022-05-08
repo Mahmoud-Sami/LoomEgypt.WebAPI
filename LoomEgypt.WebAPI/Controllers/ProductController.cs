@@ -41,7 +41,7 @@ namespace LoomEgypt.WebAPI.Controllers
                 return Ok(result);
             }
             catch (System.Exception)
-            {
+        {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 

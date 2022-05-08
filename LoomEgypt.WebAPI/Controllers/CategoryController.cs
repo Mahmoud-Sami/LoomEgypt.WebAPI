@@ -24,7 +24,7 @@ namespace LoomEgypt.WebAPI.Controllers
             try
             {
                 var result = await _services.Categories.GetAllAsync();
-                return Ok(result);  
+                return Ok(result);
             }
             catch (System.Exception)
             {
@@ -47,3 +47,4 @@ namespace LoomEgypt.WebAPI.Controllers
         }
     }
 }
+

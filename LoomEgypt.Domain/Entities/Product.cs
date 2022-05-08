@@ -16,9 +16,9 @@ namespace LoomEgypt.Domain.Entities
 
         #region Navigation Properties
 
-        public IEnumerable<ProductAttribute> Attributes { get; set; }
+        public ICollection<ProductAttribute> Attributes { get; set; }
 
-        public IEnumerable<ProductImage> Gallery { get; set; }
+        public ICollection<ProductImage> Gallery { get; set; }
 
         public ProductInventory ProductInventory { get; set; }
 

@@ -8,6 +8,5 @@ namespace LoomEgypt.Domain.Interfaces.IServices
     {
         public Task<IEnumerable<ProductDisplayDTO>> GetAllAsync();
         public Task<ProductDisplayDTO> GetProductById(int id);
-        //public Task<bool> AddCategoryAsync(CategoryCreateDTO categoryCreateDTO);
     }
 }

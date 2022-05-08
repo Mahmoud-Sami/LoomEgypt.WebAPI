@@ -2,7 +2,6 @@
 /// Used to show data for a specific category
 /// including the products for this category.
 /// </summary>
-
 using LoomEgypt.Domain.DTOs.Products;
 using System.Collections.Generic;
 

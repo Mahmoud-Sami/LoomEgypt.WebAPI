@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LoomEgypt.Domain.DTOs.Category;
+using LoomEgypt.Domain.Entities;
 using LoomEgypt.Domain.Interfaces.IServices;
 using LoomEgypt.Domain.Interfaces.IUnitsOfWork;
 using System;
@@ -26,7 +27,7 @@ namespace LoomEgypt.Services
 
         public async Task<IEnumerable<CategoryDisplayDTO>> GetAllAsync()
         {
-            var categories = await _repositories.CategoryRepository.GetAllAsync(x => x.Products);
+            var categories = await _repositories.CategoryRepository.GetAllAsync();
             var categoriesDTO = _mapper.Map<IEnumerable<CategoryDisplayDTO>>(categories);
             return categoriesDTO;
         }

@@ -1,9 +1,7 @@
-﻿using LoomEgypt.Domain.Interfaces.IRepositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
+
+using LoomEgypt.Domain.Interfaces.IRepositories;
 
 namespace LoomEgypt.Domain.Interfaces.IUnitsOfWork
 {

@@ -11,6 +11,7 @@ namespace LoomEgypt.Domain.Entities
 
         public string ImageDescription { get; set; }
 
+        //Navigation Property
         public int productID { get; set; }
     }
 }

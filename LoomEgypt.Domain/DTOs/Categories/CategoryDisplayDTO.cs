@@ -1,7 +1,6 @@
 ﻿/// <summary>
-/// Used to show data for all the categories in the system
+/// Show all categories details.
 /// </summary>
-
 namespace LoomEgypt.Domain.DTOs.Category
 {
     public class CategoryDisplayDTO

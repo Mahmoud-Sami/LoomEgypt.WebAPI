@@ -1,5 +1,4 @@
 ﻿using LoomEgypt.Domain.Entities;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LoomEgypt.Domain.Interfaces.IRepositories
