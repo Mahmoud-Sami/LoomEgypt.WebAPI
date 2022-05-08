@@ -21,6 +21,7 @@ namespace LoomEgypt.Services.Helpers
 
             CreateMap<Category, CategoryDisplayDTO>();
             CreateMap<Category, CategoryProductDisplayDTO>();
+            CreateMap<CategoryCreateDTO, Category>();
         }
     }
 }

@@ -33,12 +33,26 @@ namespace LoomEgypt.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CategoryProductDisplayDTO>> GetGategoryByID(int id)
+        public async Task<ActionResult<CategoryProductDisplayDTO>> GetCategoryByID(int id)
         {
             try
             {
                 var result = await _services.Categories.GetByIdAsync(id);
                 return Ok(result);
+            }
+            catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CategoryProductDisplayDTO>> AddCategory(CategoryCreateDTO categoryDTO)
+        {
+            try
+            {
+                var category = await _services.Categories.AddCategoryAsync(categoryDTO);
+                return CreatedAtAction(nameof(GetCategoryByID), new { id = category.Id }, category);
             }
             catch (System.Exception)
             {

@@ -20,9 +20,12 @@ namespace LoomEgypt.Services
             _mapper = mapper;
         }
 
-        public Task<bool> AddCategoryAsync(CategoryCreateDTO categoryCreateDTO)
+        public async Task<CategoryProductDisplayDTO> AddCategoryAsync(CategoryCreateDTO categoryCreateDTO)
         {
-            throw new NotImplementedException();
+            Category category = _mapper.Map<Category>(categoryCreateDTO);
+            await _repositories.CategoryRepository.AddAsync(category);
+            await _repositories.SaveAsync();
+            return _mapper.Map<CategoryProductDisplayDTO>(category);
         }
 
         public async Task<IEnumerable<CategoryDisplayDTO>> GetAllAsync()

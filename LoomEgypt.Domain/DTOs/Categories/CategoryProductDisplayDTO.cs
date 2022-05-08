@@ -9,6 +9,7 @@ namespace LoomEgypt.Domain.DTOs.Category
 {
     public class CategoryProductDisplayDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal ShippingFees { get; set; }
