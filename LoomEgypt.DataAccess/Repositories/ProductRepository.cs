@@ -1,6 +1,10 @@
-﻿using LoomEgypt.Domain.Entities.Products;
+﻿using LoomEgypt.Domain.Entities;
 using LoomEgypt.Domain.Interfaces.IRepositories;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace LoomEgypt.DataAccess.Repositories

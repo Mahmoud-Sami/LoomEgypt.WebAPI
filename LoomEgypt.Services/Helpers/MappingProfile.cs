@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using LoomEgypt.Domain.DTOs.Category;
 using LoomEgypt.Domain.DTOs.Products;
-using LoomEgypt.Domain.Entities.Categories;
-using LoomEgypt.Domain.Entities.Products;
+using LoomEgypt.Domain.Entities;
+using System.Collections.Generic;
 
 namespace LoomEgypt.Services.Helpers
 {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LoomEgypt.Domain.Entities.Products
+namespace LoomEgypt.Domain.Entities
 {
     [Table("ProductImages")]
     public class ProductImage : BaseEntity<int>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LoomEgypt.Domain.Entities.Products
+namespace LoomEgypt.Domain.Entities
 {
     [Table("ProductsInventory")]
     public class ProductInventory : BaseEntity<int>

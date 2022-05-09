@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LoomEgypt.Domain.DTOs.Category;
-using LoomEgypt.Domain.Entities.Categories;
+using LoomEgypt.Domain.Entities;
 using LoomEgypt.Domain.Interfaces.IServices;
 using LoomEgypt.Domain.Interfaces.IUnitsOfWork;
 using LoomEgypt.Services.Helpers;

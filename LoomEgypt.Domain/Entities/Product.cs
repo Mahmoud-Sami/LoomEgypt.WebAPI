@@ -1,9 +1,8 @@
-﻿using LoomEgypt.Domain.Entities.Categories;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LoomEgypt.Domain.Entities.Products
+namespace LoomEgypt.Domain.Entities
 {
     [Table("Products")]
     public class Product : BaseEntity<int>
