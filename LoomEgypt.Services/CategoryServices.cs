@@ -3,6 +3,7 @@ using LoomEgypt.Domain.DTOs.Category;
 using LoomEgypt.Domain.Entities;
 using LoomEgypt.Domain.Interfaces.IServices;
 using LoomEgypt.Domain.Interfaces.IUnitsOfWork;
+using LoomEgypt.Services.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +37,15 @@ namespace LoomEgypt.Services
             return categoriesDTO;
         }
 
-        public async Task<CategoryProductDisplayDTO> GetByIdAsync(int id, int? count)
+        public async Task<CategoryProductDisplayDTO> GetByIdAsync(int id, int? count, bool? shuffle)
         {
             if (count != null && count <= 0) 
                 throw new ArgumentOutOfRangeException("[count] paramter should be positive");
 
             var category = await _repositories.CategoryRepository.GetCategoryByIDAsync(id);
+
+            if (shuffle.HasValue && shuffle == true)
+                category.Products = category.Products.Shuffle().ToList();
 
             if (count.HasValue)
                 category.Products = category.Products.Take(count.Value).ToList();

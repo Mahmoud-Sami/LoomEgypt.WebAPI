@@ -33,11 +33,11 @@ namespace LoomEgypt.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CategoryProductDisplayDTO>> GetCategoryByID(int id, int? count)
+        public async Task<ActionResult<CategoryProductDisplayDTO>> GetCategoryById(int id, int? count, bool? shuffle)
         {
             try
             {
-                var result = await _services.Categories.GetByIdAsync(id, count);
+                var result = await _services.Categories.GetByIdAsync(id, count, shuffle);
                 return Ok(result);
             }
             catch (System.Exception)
@@ -52,7 +52,7 @@ namespace LoomEgypt.WebAPI.Controllers
             try
             {
                 var category = await _services.Categories.AddCategoryAsync(categoryDTO);
-                return CreatedAtAction(nameof(GetCategoryByID), new { id = category.Id }, category);
+                return CreatedAtAction(nameof(GetCategoryById), new { id = category.Id }, category);
             }
             catch (System.Exception)
             {
