@@ -19,11 +19,11 @@ namespace LoomEgypt.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoryDisplayDTO>>> GetAllGategories()
+        public async Task<ActionResult<IEnumerable<dynamic>>> GetAllGategories(int? count, bool? shuffle)
         {
             try
             {
-                var result = await _services.Categories.GetAllAsync();
+                var result = await _services.Categories.GetAllAsync(count, shuffle);
                 return Ok(result);
             }
             catch (System.Exception)

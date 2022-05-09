@@ -30,11 +30,27 @@ namespace LoomEgypt.Services
             return _mapper.Map<CategoryProductDisplayDTO>(category);
         }
 
-        public async Task<IEnumerable<CategoryDisplayDTO>> GetAllAsync()
+        public async Task<IEnumerable<dynamic>> GetAllAsync(int? count, bool? shuffle)
         {
             var categories = await _repositories.CategoryRepository.GetAllAsync();
-            var categoriesDTO = _mapper.Map<IEnumerable<CategoryDisplayDTO>>(categories);
-            return categoriesDTO;
+
+            if (count.HasValue)
+            {
+                foreach (var category in categories)
+                {
+                    if (shuffle.HasValue && shuffle == true)
+                        category.Products = category.Products.Shuffle().ToList();
+
+                    category.Products = category.Products.Take(count.Value).ToList();
+                }
+                return _mapper.Map<IEnumerable<CategoryProductDisplayDTO>>(categories);
+            }
+            else
+            {
+                return _mapper.Map<IEnumerable<CategoryDisplayDTO>>(categories);
+            }
+
+            
         }
 
         public async Task<CategoryProductDisplayDTO> GetByIdAsync(int id, int? count, bool? shuffle)
@@ -42,7 +58,7 @@ namespace LoomEgypt.Services
             if (count != null && count <= 0) 
                 throw new ArgumentOutOfRangeException("[count] paramter should be positive");
 
-            var category = await _repositories.CategoryRepository.GetCategoryByIDAsync(id);
+            var category = await _repositories.CategoryRepository.GetCategoryByIdAsync(id);
 
             if (shuffle.HasValue && shuffle == true)
                 category.Products = category.Products.Shuffle().ToList();
