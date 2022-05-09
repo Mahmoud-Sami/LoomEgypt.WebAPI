@@ -33,11 +33,11 @@ namespace LoomEgypt.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CategoryProductDisplayDTO>> GetCategoryByID(int id)
+        public async Task<ActionResult<CategoryProductDisplayDTO>> GetCategoryByID(int id, int? count)
         {
             try
             {
-                var result = await _services.Categories.GetByIdAsync(id);
+                var result = await _services.Categories.GetByIdAsync(id, count);
                 return Ok(result);
             }
             catch (System.Exception)

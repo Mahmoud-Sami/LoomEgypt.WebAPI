@@ -7,7 +7,7 @@ namespace LoomEgypt.Domain.Interfaces.IServices
     public interface ICategoryServices
     {
         public Task<IEnumerable<CategoryDisplayDTO>> GetAllAsync();
-        public Task<CategoryProductDisplayDTO> GetByIdAsync(int id);
+        public Task<CategoryProductDisplayDTO> GetByIdAsync(int id, int? count);
         public Task<CategoryProductDisplayDTO> AddCategoryAsync(CategoryCreateDTO categoryCreateDTO);
     }
 }

@@ -5,6 +5,7 @@ using LoomEgypt.Domain.Interfaces.IServices;
 using LoomEgypt.Domain.Interfaces.IUnitsOfWork;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LoomEgypt.Services
@@ -35,10 +36,18 @@ namespace LoomEgypt.Services
             return categoriesDTO;
         }
 
-        public async Task<CategoryProductDisplayDTO> GetByIdAsync(int id)
+        public async Task<CategoryProductDisplayDTO> GetByIdAsync(int id, int? count)
         {
+            if (count != null && count <= 0) 
+                throw new ArgumentOutOfRangeException("[count] paramter should be positive");
+
             var category = await _repositories.CategoryRepository.GetCategoryByIDAsync(id);
+
+            if (count.HasValue)
+                category.Products = category.Products.Take(count.Value).ToList();
+
             var categoryDTO = _mapper.Map<CategoryProductDisplayDTO>(category);
+            
             return categoryDTO;
         }
     }
