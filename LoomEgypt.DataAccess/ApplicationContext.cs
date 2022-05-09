@@ -1,4 +1,5 @@
-﻿using LoomEgypt.Domain.Entities;
+﻿using LoomEgypt.Domain.Entities.Categories;
+using LoomEgypt.Domain.Entities.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace LoomEgypt.DataAccess

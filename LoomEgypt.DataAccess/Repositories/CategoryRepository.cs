@@ -1,4 +1,4 @@
-﻿using LoomEgypt.Domain.Entities;
+﻿using LoomEgypt.Domain.Entities.Categories;
 using LoomEgypt.Domain.Interfaces.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using System;
