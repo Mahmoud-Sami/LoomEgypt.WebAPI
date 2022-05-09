@@ -1,5 +1,6 @@
 ﻿using LoomEgypt.Domain.Entities;
 using LoomEgypt.Domain.Interfaces.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,21 @@ namespace LoomEgypt.DataAccess.Repositories
         {
         }
 
-        public async Task<Category> GetCategoryByIDAsync(int id)
+        public override async Task<IEnumerable<Category>> GetAllAsync()
+        {
+            var categories = await _context.Categories
+                .Include(category => category.Products)
+                .ThenInclude(product => product.Attributes)
+                .Include(category => category.Products)
+                .ThenInclude(product => product.Gallery)
+                .Include(category => category.Products)
+                .ThenInclude(product => product.ProductInventory)
+                .ToListAsync();
+
+            return categories;
+        }
+
+        public async Task<Category> GetCategoryByIdAsync(int id)
         {
             var category = await _context.Categories.FindAsync(id);
             await _context.Entry(category).Collection(x => x.Products).LoadAsync();

@@ -28,7 +28,7 @@ namespace LoomEgypt.DataAccess.Repositories
             await _context.Set<T>().AddRangeAsync(entities); 
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _context.Set<T>().ToListAsync();
         }
