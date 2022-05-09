@@ -33,7 +33,7 @@ namespace LoomEgypt.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<ProductDisplayDTO>> GetGategoryByID(int id)
+        public async Task<ActionResult<ProductDisplayDTO>> GetProductById(int id)
         {
             try
             {

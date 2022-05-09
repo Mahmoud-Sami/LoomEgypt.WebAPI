@@ -16,13 +16,18 @@ namespace LoomEgypt.DataAccess.Repositories
 
         }
 
-        public async Task<Product> GetProductByIDAsync(int id)
+        public async Task<Product> GetProductByIdAsync(int id)
         {
             var product = await _context.Products.FindAsync(id);
             await _context.Entry(product).Collection(x => x.Attributes).LoadAsync();
             await _context.Entry(product).Collection(x => x.Gallery).LoadAsync();
             await _context.Entry(product).Reference(x => x.ProductInventory).LoadAsync();
             await _context.Entry(product).Reference(x => x.Category).LoadAsync();
+
+            foreach (var attribute in product.Attributes)
+            {
+                await _context.Entry(attribute).Collection(x => x.Items).LoadAsync();
+            }
             return product; ;
         }
     }

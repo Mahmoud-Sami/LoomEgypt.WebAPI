@@ -5,7 +5,7 @@ namespace LoomEgypt.Domain.DTOs.Products
 {
     public class ProductAttributeDisplayDTO
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<ProductAttributeItemDisplayDTO> Items { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace LoomEgypt.Services.Helpers
         public MappingProfile()
         {
             CreateMap<ProductAttribute, ProductAttributeDisplayDTO>();
+            CreateMap<ProductAttributeItem, ProductAttributeItemDisplayDTO>();
             CreateMap<ProductImage, ProductImageDisplayDTO>();
             CreateMap<Product, ProductDisplayDTO>()
                 .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))

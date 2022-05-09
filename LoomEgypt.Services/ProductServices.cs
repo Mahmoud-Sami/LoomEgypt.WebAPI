@@ -30,8 +30,8 @@ namespace LoomEgypt.Services
         }
 
         public async Task<ProductDisplayDTO> GetProductById(int id)
-                                       {
-            var product = await _repositories.ProductRepository.GetProductByIDAsync(id);
+        {
+            var product = await _repositories.ProductRepository.GetProductByIdAsync(id);
             var productDisplay = _mapper.Map<ProductDisplayDTO>(product);
             return productDisplay;
         }

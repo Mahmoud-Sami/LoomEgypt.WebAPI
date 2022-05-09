@@ -20,6 +20,7 @@ namespace LoomEgypt.DataAccess.Repositories
             var categories = await _context.Categories
                 .Include(category => category.Products)
                 .ThenInclude(product => product.Attributes)
+                .ThenInclude(attribute => attribute.Items)
                 .Include(category => category.Products)
                 .ThenInclude(product => product.Gallery)
                 .Include(category => category.Products)

@@ -5,6 +5,6 @@ namespace LoomEgypt.Domain.Interfaces.IRepositories
 {
     public interface IProductRepository : IRepositoryBase<Product>
     {
-        public Task<Product> GetProductByIDAsync(int id);
+        public Task<Product> GetProductByIdAsync(int id);
     }
 }
