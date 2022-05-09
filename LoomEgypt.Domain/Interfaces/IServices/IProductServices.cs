@@ -6,7 +6,6 @@ namespace LoomEgypt.Domain.Interfaces.IServices
 {
     public interface IProductServices
     {
-        public Task<IEnumerable<ProductDisplayDTO>> GetAllAsync();
         public Task<ProductDisplayDTO> GetProductById(int id);
     }
 }

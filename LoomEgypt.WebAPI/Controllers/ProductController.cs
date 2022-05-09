@@ -17,21 +17,6 @@ namespace LoomEgypt.WebAPI.Controllers
             _services = services;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDisplayDTO>>> GetAllProducts()
-        {
-            try
-            {
-                var result = await _services.Products.GetAllAsync();
-                return Ok(result);
-            }
-            catch (System.Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-            
-        }
-
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ProductDisplayDTO>> GetProductById(int id)
         {

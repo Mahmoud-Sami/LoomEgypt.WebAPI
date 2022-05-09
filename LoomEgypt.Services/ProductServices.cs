@@ -20,15 +20,6 @@ namespace LoomEgypt.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ProductDisplayDTO>> GetAllAsync()
-        {
-            var products = await _repositories.ProductRepository
-                .GetAllAsync(x => x.Category, x => x.Gallery, x => x.Attributes, x => x.ProductInventory);
-
-            var result = _mapper.Map<IEnumerable<ProductDisplayDTO>>(products);
-            return result;
-        }
-
         public async Task<ProductDisplayDTO> GetProductById(int id)
         {
             var product = await _repositories.ProductRepository.GetProductByIdAsync(id);

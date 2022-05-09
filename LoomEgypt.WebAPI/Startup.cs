@@ -32,7 +32,7 @@ namespace LoomEgypt.WebAPI
             services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddDbContext<ApplicationContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("Local"));
+                options.UseSqlServer(Configuration.GetConnectionString("Remote"));
             });
 
             services.AddControllers();
@@ -52,10 +52,11 @@ namespace LoomEgypt.WebAPI
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LoomEgypt.WebAPI v1"));
+                app.UseDeveloperExceptionPage(); 
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LoomEgypt.WebAPI v1"));
 
             app.UseHttpsRedirection();
 
